@@ -1,0 +1,16 @@
+<?php
+
+	# İnner Join Example :
+	$query = $this->db->select("*")
+		      ->from('table1')
+		      ->join('table2', 'table2.value = table1.value', 'inner')
+		      ->where('status', "1")
+		      ->get();
+	$data["sorgu"] = $query->result();
+
+
+	# URL Parametre Example :
+	$this->uri->segment(1);
+
+
+?>

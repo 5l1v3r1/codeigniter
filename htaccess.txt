@@ -1,0 +1,8 @@
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php/$1 [L]
+
+# www Yönlendirmesi
+#RewriteCond %{HTTP_HOST} ^siteadi.com
+#RewriteRule (.*) http://www.siteadi.com/$1 [R=301,L]
