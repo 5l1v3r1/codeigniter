@@ -6,3 +6,9 @@ RewriteRule ^(.*)$ index.php/$1 [L]
 # www Yönlendirmesi
 #RewriteCond %{HTTP_HOST} ^siteadi.com
 #RewriteRule (.*) http://www.siteadi.com/$1 [R=301,L]
+
+# SSL Yönlendirmesi
+RewriteCond %{HTTPS} off
+RewriteRule .* https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+RewriteCond %{HTTP_HOST} !^www\. [NC]
+RewriteRule .* https://www.%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
